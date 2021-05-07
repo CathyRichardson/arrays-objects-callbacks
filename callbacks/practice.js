@@ -28,11 +28,14 @@
 */
 
 // Code Here 
+function first(arr, cb) {
+  cb(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-first(names, function(firstName){
+first(names, function (firstName) {
   console.log('The first name in names is ' + firstName);
   return firstName;
 });
@@ -48,9 +51,11 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last(arr, cb) {
+  cb(arr[arr.length - 1]);
+}
 // Do not edit the code below.
-last(names, function(lastName){
+last(names, function (lastName) {
   console.log('The last name in names is ' + lastName);
   return lastName;
 });
@@ -66,9 +71,12 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, cb) {
+  cb(num1 * num2);
+}
 
 // Do not edit the code below.
-multiply(4, 3, function(answer){
+multiply(4, 3, function (answer) {
   console.log('The answer is ' + answer); //should console.log 12
 });
 // Do not edit the code above.
@@ -86,9 +94,36 @@ multiply(4, 3, function(answer){
 
 //Code Here 
 
+// first solution 
+// function contains(arr, name, cb) {
+//   let isInTheArray = false;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === name) {
+//       isInTheArray = true;
+//     }
+//   }
+//   if (isInTheArray) {
+//     cb(true);
+//   } else {
+//     cb(false);
+//   }
+// }
+
+// more efficient solution 
+function contains(arr, name, cb) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === name) {
+      cb(true);
+      return;
+    }
+  }
+  cb(false);
+}
+
+
 // Do not edit the code below.
-contains(names, 'Colt', function(result){
-  if(result === true){
+contains(names, 'Colt', function (result) {
+  if (result === true) {
     console.log('Colt is in the array');
   } else {
     console.log('Colt is not in the array');
@@ -106,9 +141,44 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+// long way 
+// function containsName(arr, name) { 
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === name) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+
+// function uniq(arr, cb) {
+//   let noDupes = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!containsName(noDupes, arr[i])) {
+//       noDupes.push(arr[i]); 
+//     }
+//   }
+//   cb(noDupes);
+// }
+
+
+// uses array.includes() method
+
+function uniq(arr, cb) {
+  let noDupes = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!noDupes.includes(arr[i])) {
+      noDupes.push(arr[i]);
+    }
+  }
+  cb(noDupes);
+}
+
+
 
 // Do not edit the code below.
-uniq(names, function(uniqArr){
+uniq(names, function (uniqArr) {
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 // Do not edit the code above.
@@ -125,7 +195,7 @@ uniq(names, function(uniqArr){
 //Code Here 
 
 // Do not edit the code below.
-each(names, function(item, indice){
+each(names, function (item, indice) {
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
@@ -163,7 +233,7 @@ var users = [
   },
 ];
 
-getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
+getUserById(users, '16t', function (user) {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
 // Do not edit the code above.
