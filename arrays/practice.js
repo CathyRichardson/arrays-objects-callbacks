@@ -262,7 +262,6 @@ function addTen(numbers) {
       newArray.push(numbers[i] + 10);
     }
   }
-  console.log(newArray);
   return newArray;
 }
 
@@ -288,7 +287,13 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  } else {
+    return arr2;
+  }
+}
 
 
 /*
@@ -300,6 +305,29 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
+
+function both(arr1, arr2) {
+  let newArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      newArr.push(arr1[i]);
+    }
+  }
+  return newArr;
+}
+
+// Use 2 for loops instead of includes method 
+// function both(arr1, arr2) {
+//   let newArr = [];
+//   for (let i = 0; i < arr1.length; i++) {
+//     for (let j = 0; j < arr2.length; j++) {
+//       if (arr2[j] === arr1[i]) {
+//         newArr.push(arr1[i]);
+//       }
+//     }
+//   }
+//   return newArr;
+// }
 
 
 
