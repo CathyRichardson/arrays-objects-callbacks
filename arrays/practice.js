@@ -369,7 +369,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(joe, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -378,8 +379,11 @@ var colt = {
 */
 
 //Code Here
-
-
+for (let i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i].name === "Cahlan") {
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -390,7 +394,7 @@ var colt = {
 */
 
 //Code Here
-
+ let users = [];
 
 
 /*
@@ -411,8 +415,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Bob',
+  email: 'bob@devmounta.in',
+  password: 'password2',
+  username: 'ihazcode2'
+};
 
+var user3 = {
+  name: 'Sally McIver',
+  email: 'sally.mciver@devmounta.in',
+  password: 'hunter3',
+  username: 'ihazcode3'
+};
 
+users.push(user1, user2, user3);
 
 /*
   Now you have a very common data structure.
@@ -425,7 +442,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (let i = 0; i < users.length; i++) {
+  if (users[i].email === "mark.mciver@devmounta.in") {
+    users.splice(i, 1);
+    }
+}
 
 
 /*
